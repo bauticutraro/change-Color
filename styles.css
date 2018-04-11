@@ -1,0 +1,85 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --red: 0;
+    --green: 0;
+    --blue: 0;
+}
+
+body {
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
+
+    font-family: sans-serif;
+
+    background-color: rgb(var(--red), var(--green), var(--blue));
+}
+
+.content {
+    width: 80vw;
+    max-width: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.label {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: #fff;
+    border: 2px solid #f1f1f1;
+    border-radius: .25rem;
+    padding: 1rem;
+
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    grid-template-areas: 'colorName input value';
+    align-items: center;
+}
+
+.color-name {
+    grid-area: colorName;
+    font-weight: 700;
+    text-align: center;
+}
+
+.input {
+    width: 85%;
+    display: block;
+    grid-area: input;
+    margin: auto;
+    -webkit-appearance: none;
+    border: 0;
+    outline: 0;
+    background-color: rgba(71, 73, 255, .7);
+    height: 3px;
+}
+
+
+.input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    background: rgb(71,73,255);
+    cursor: pointer;
+}
+
+.span {
+    text-align: center;
+    grid-area: value;
+}
